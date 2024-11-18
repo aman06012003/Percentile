@@ -16,7 +16,7 @@ def predict_corrected_rank(percentile: float, total_candidates: int) -> float:
     corrected_rank = predicted_rank + predicted_correction
     # Ensure the rank does not exceed the total number of candidates or become negative
     corrected_rank = max(1, min(corrected_rank, total_candidates))
-    return corrected_rank
+    return round(corrected_rank)
 
 
 @app.get("/predict")
